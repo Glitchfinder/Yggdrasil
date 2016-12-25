@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.glitchkey</groupId>
-  <artifactId>Yggdrasil</artifactId>
+  <artifactId>yggdrasil</artifactId>
   <version>0.0.1</version>
   <name>Yggdrasil</name>
   <description>
@@ -151,9 +151,16 @@
     <dependency>
       <groupId>org.spongepowered</groupId>
       <artifactId>spongeapi</artifactId>
-      <version>[3.0.0,3.1.0)</version>
+      <version>LATEST</version>
       <type>jar</type>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.glitchkey</groupId>
+      <artifactId>yggdrasil-noise</artifactId>
+      <version>LATEST</version>
+      <type>jar</type>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

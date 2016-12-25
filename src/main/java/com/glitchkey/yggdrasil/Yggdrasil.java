@@ -28,6 +28,7 @@ package com.glitchkey.yggdrasil;
 import org.spongepowered.api.Game;
 import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
 import org.spongepowered.api.event.game.state.GameStoppingServerEvent;
+import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.config.DefaultConfig;
 import org.spongepowered.api.event.Listener;
@@ -42,7 +43,8 @@ import org.slf4j.Logger;
 /**
  * A simple sponge plugin
  */
-@Plugin(id = PomData.ARTIFACT_ID, name = PomData.NAME, version = PomData.VERSION)
+ 
+@Plugin(id = PomData.ARTIFACT_ID, name = PomData.NAME, version = PomData.VERSION, dependencies = @Dependency(id = "yggdrasil-noise"))
 public class Yggdrasil {
 
     // These are all injected on plugin load for users to work from

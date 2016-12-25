@@ -20,6 +20,6 @@
  * SOFTWARE.
  */
 
-package com.glitchkey.yggdrasil.terrain;
+package com.glitchkey.yggdrasil.world;
 
-public class ColumnProvider {}
+public class WorldSettings {}

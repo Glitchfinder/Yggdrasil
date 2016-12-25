@@ -22,4 +22,99 @@
 
 package com.glitchkey.yggdrasil.terrain;
 
-public class ChunkPopulator {}
+//* IMPORTS: JDK/JRE
+	//* NOT NEEDED
+//* IMPORTS: SPONGE
+import org.spongepowered.api.world.extent.ImmutableBiomeVolume;
+import org.spongepowered.api.world.extent.MutableBlockVolume;
+import org.spongepowered.api.world.gen.GenerationPopulator;
+import org.spongepowered.api.world.World;
+//* IMPORTS: YGGDRASIL
+import com.glitchkey.yggdrasil.noise.Perlin;
+import com.glitchkey.yggdrasil.noise.RidgedMultifractal;
+//* IMPORTS: OTHER
+	//* NOT NEEDED
+
+public class ChunkPopulator implements GenerationPopulator {
+	private UnsupportedOperationException exception;
+	private Perlin p;
+	private RidgedMultifractal r;
+	public void populate(World world, MutableBlockVolume blocks, 
+		ImmutableBiomeVolume biomes)
+	{
+		if (exception != null) throw exception;
+
+		String msg = "Custom generator is missing required method: ";
+		msg += "populate()";
+		exception = new UnsupportedOperationException(msg);
+
+		throw exception;
+	}
+
+	public final double perlin(long seed, double x)
+	{
+		return p.noise(seed, x, 0, 0, 6, 1D, 2D);
+	}
+
+	public final double perlin(long seed, double x, double y)
+	{
+		return p.noise(seed, x, y, 0, 6, 1D, 2D);
+	}
+
+	public final double perlin(long seed, double x, double y, double z)
+	{
+		return p.noise(seed, x, y, z, 6, 1D, 2D);
+	}
+
+	public final double perlin(long seed, double x, int octaves,
+		double frequency, double amplitude)
+	{
+		return p.noise(seed, x, 0, 0, octaves, frequency, amplitude);
+	}
+
+	public final double perlin(long seed, double x, double y, int octaves,
+		double frequency, double amplitude)
+	{
+		return p.noise(seed, x, y, 0, octaves, frequency, amplitude);
+	}
+
+	public final double perlin(long seed, double x, double y, double z,
+		int octaves, double frequency, double amplitude)
+	{
+		return p.noise(seed, x, y, z, octaves, frequency, amplitude);
+	}
+
+	public final double ridgedMultifractal(long seed, double x)
+	{
+		return r.noise(seed, x, 0, 0, 6, 1D, 2D);
+	}
+
+	public final double ridgedMultifractal(long seed, double x, double y)
+	{
+		return r.noise(seed, x, y, 0, 6, 1D, 2D);
+	}
+
+	public final double ridgedMultifractal(long seed, double x, double y,
+		double z)
+	{
+		return r.noise(seed, x, y, z, 6, 1D, 2D);
+	}
+
+	public final double ridgedMultifractal(long seed, double x, int octaves,
+		double frequency, double amplitude)
+	{
+		return r.noise(seed, x, 0, 0, octaves, frequency, amplitude);
+	}
+
+	public final double ridgedMultifractal(long seed, double x, double y,
+		int octaves, double frequency, double amplitude)
+	{
+		return r.noise(seed, x, y, 0, octaves, frequency, amplitude);
+	}
+
+	public final double ridgedMultifractal(long seed, double x, double y,
+		double z, int octaves, double frequency, double amplitude)
+	{
+		return r.noise(seed, x, y, z, octaves, frequency, amplitude);
+	}
+}
